@@ -23,8 +23,7 @@ import com.example.xyzreader.data.ItemsContract;
 /**
  * An activity representing a single Article detail screen, letting you swipe between articles.
  */
-public class ArticleDetailActivity extends ActionBarActivity
-        implements LoaderManager.LoaderCallbacks<Cursor> {
+public class ArticleDetailActivity extends ActionBarActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private Cursor mCursor;
     private long mStartId;

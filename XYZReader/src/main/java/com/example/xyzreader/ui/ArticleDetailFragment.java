@@ -51,21 +51,17 @@ public class ArticleDetailFragment extends Fragment implements
     private static final String TAG = "ArticleDetailFragment";
 
     public static final String ARG_ITEM_ID = "item_id";
-    private static final float PARALLAX_FACTOR = 1.25f;
 
     private Cursor mCursor;
     private long mItemId;
     private View mRootView;
     private int mMutedColor = 0xFF333333;
     private NestedScrollView mScrollView;
-    private CoordinatorLayout mCoordinatorLayout;
     private ColorDrawable mStatusBarColorDrawable;
     private FloatingActionButton fab;
     private int oldScrollYPostion = 0;
 
-    private int mTopInset;
     private View mPhotoContainerView;
-    private ImageView mPhotoView;
     private ImageView mPhotoViewBig;
     private int mScrollY;
     private boolean mIsCard = false;
@@ -102,13 +98,8 @@ public class ArticleDetailFragment extends Fragment implements
         }
         // getting the card id?
         mIsCard = getResources().getBoolean(R.bool.detail_is_card);
-        mStatusBarFullOpacityBottom = getResources().getDimensionPixelSize(
-                R.dimen.detail_card_top_margin);
+        mStatusBarFullOpacityBottom = getResources().getDimensionPixelSize(R.dimen.detail_card_top_margin);
         setHasOptionsMenu(true);
-    }
-
-    public ArticleDetailActivity getActivityCast() {
-        return (ArticleDetailActivity) getActivity();
     }
 
     @Override
@@ -144,8 +135,6 @@ public class ArticleDetailFragment extends Fragment implements
         mPhotoViewBig = (ImageView)mRootView.findViewById(R.id.photo_big);
         fab = (FloatingActionButton) mRootView.findViewById(R.id.share_fab);
 
-        mStatusBarColorDrawable = new ColorDrawable(0);
-
         mScrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
             @Override
             public void onScrollChanged() {
@@ -169,24 +158,7 @@ public class ArticleDetailFragment extends Fragment implements
         });
 
         bindViews();
-        // updateStatusBar();
         return mRootView;
-    }
-
-
-
-    static float progress(float v, float min, float max) {
-        return constrain((v - min) / (max - min), 0, 1);
-    }
-
-    static float constrain(float val, float min, float max) {
-        if (val < min) {
-            return min;
-        } else if (val > max) {
-            return max;
-        } else {
-            return val;
-        }
     }
 
     private Date parsePublishedDate() {
@@ -210,9 +182,7 @@ public class ArticleDetailFragment extends Fragment implements
         bylineView.setMovementMethod(new LinkMovementMethod());
         TextView bodyView = (TextView)mRootView.findViewById(R.id.article_body);
 
-
         bodyView.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "Rosario-Regular.ttf"));
-
 
         if (mCursor != null) {
             mRootView.setAlpha(0);

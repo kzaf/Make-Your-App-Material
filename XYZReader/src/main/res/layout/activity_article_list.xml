@@ -8,8 +8,7 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/toolbar_container"
         android:layout_width="match_parent"
-        android:layout_height="112dp"
-        android:fitsSystemWindows="true"
+        android:layout_height="160dp"
         android:background="@color/colorPrimary"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
@@ -23,9 +22,10 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?actionBarSize"
-                android:layout_gravity="center"
+                android:layout_gravity="bottom"
                 android:layout_marginLeft="@dimen/list_toolbar_side_margin"
                 android:layout_marginRight="@dimen/list_toolbar_side_margin"
+                android:layout_marginBottom="5sp"
                 app:layout_collapseMode="pin"
                 app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
