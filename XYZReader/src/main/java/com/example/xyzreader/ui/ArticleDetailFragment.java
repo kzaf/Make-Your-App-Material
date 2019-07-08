@@ -17,6 +17,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ShareCompat;
@@ -57,7 +58,6 @@ public class ArticleDetailFragment extends Fragment implements
     private View mRootView;
     private int mMutedColor = 0xFF333333;
     private NestedScrollView mScrollView;
-    private ColorDrawable mStatusBarColorDrawable;
     private FloatingActionButton fab;
     private int oldScrollYPostion = 0;
 
@@ -114,8 +114,8 @@ public class ArticleDetailFragment extends Fragment implements
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         //inflating the fragment layouts
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
 
